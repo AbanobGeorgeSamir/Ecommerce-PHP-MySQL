@@ -26,12 +26,6 @@ CREATE TABLE `messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `messages` (`id`, `name`, `email`, `message`, `created_at`) VALUES
-(1, 'Abanob George', 'samirabanob848@gmail.com', 'hello', '2026-03-30 12:47:23'),
-(2, 'Abanob George', 'abanobgeorge662@gmail.com', 'hello world', '2026-04-01 20:21:53'),
-(3, 'Abanob George', 'abanobgeorge662@gmail.com', 'hello from web', '2026-04-01 21:32:46'),
-(4, 'Abanob George', 'abanobgeorge662@gmail.com', 'hello from web', '2026-04-01 22:13:06'),
-(5, 'abanobasdfsaffsa', 'abanobgeorge662@gmail.com', 'fsasfafsd', '2026-04-01 22:22:16');
 
 
 
@@ -47,14 +41,6 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `orders` (`id`, `user_id`, `customer_name`, `email`, `address`, `total`, `status`, `created_at`) VALUES
-(1, NULL, 'Abanob George', 'fjksdfklsdjflksj@gmail.com', 'street', 0.00, 'pending', '2026-03-30 12:22:54'),
-(2, NULL, 'Abanob George', 'samirabanob848@gmail.com', '1021', 0.00, 'pending', '2026-03-30 12:24:43'),
-(3, NULL, 'Abanob George', 'abanob@gmail.com', '102', 0.00, 'pending', '2026-03-30 12:27:36'),
-(4, NULL, 'Abanob', 'abanob@gmail.com', '102', 3600.00, 'pending', '2026-03-30 12:30:08'),
-(5, 4, 'abnaob george samir', 'samirabanob848@gmail.com', 'egypt, eltor', 120.00, 'pending', '2026-04-01 21:20:52'),
-(6, 4, 'Abanob George', 'abanobgeorge662@gmail.com', 'egypt, eltor', 120.00, 'pending', '2026-04-01 21:25:53'),
-(7, NULL, 'abanob george samir', 'abanobgeorge332@gmail.com', 'egypt, eltor', 120.00, 'pending', '2026-04-01 22:21:46');
 
 
 
@@ -67,10 +53,6 @@ CREATE TABLE `order_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(2, 5, 11, 1, 120.00),
-(3, 6, 11, 1, 120.00),
-(4, 7, 11, 1, 120.00);
 
 DELIMITER $$
 CREATE TRIGGER `reduce_stock_after_order` AFTER INSERT ON `order_items` FOR EACH ROW BEGIN
@@ -119,9 +101,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
-(4, 'Abanob George', 'samirabanob848@gmail.com', '$2y$12$z.nJyReZ9aosDydHiJ.ebO9sX3v7zRydslwEMPhDKCw3At.1dUifi', 'admin', '2026-04-01 21:14:10'),
-(5, 'Abanob George', 'abanobgeorge662@gmail.com', '$2y$12$3ngw6I7sqjD1e0d6eB4ICuY3H5xacYMtfd5Ot66n6B0N3aRTgkFJy', 'user', '2026-04-01 21:32:22');
 
 
 ALTER TABLE `cart`
